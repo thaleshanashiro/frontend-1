@@ -27,7 +27,7 @@ async function callFetchWithPost(time){
             'content-type' : 'application/json'
         },
         body :JSON.stringify({
-            'times' : times
+            'time' : time
         })
     }
     await fetch(url, options);
