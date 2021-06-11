@@ -27,7 +27,7 @@ async function callFetchWithPost(times){
             'content-type' : 'application/json'
         },
         body :JSON.stringify({
-            'time' : time
+            'times' : times
         })
     }
     const response = await fetch(url, options); 
@@ -48,7 +48,7 @@ async function callFetchWithPut(id, novoTime){
             'content-type' : 'application/json'
         },
         body :JSON.stringify({
-            'time' : novoTime
+            'times' : novoTime
         })
     }
         await fetch('${url}${id}', options);
@@ -72,17 +72,17 @@ async function callFetchWithDelete(){
 function submitPost(){
     console.log("entrei na função");
     const form = document.forms['postForm'];
-    const time = form["time"].value;
-    console.log(time);
-    callFetchWithPost(time);
+    const times = form["time"].value;
+    console.log(times);
+    callFetchWithPost(times);
     return false;
 }
 
 function submitPut(){
     const form = document.forms['putForm'];
     const id = form["id"].value;
-    const time = form["time"].value;
-    callFetchWithPut(id, time);
+    const times = form["times"].value;
+    callFetchWithPut(id, times);
     return false;
 }
 
