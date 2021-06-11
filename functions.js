@@ -37,6 +37,7 @@ async function callFetchWithPost(times){
     } else {
         console.log("Deu errado");
     }
+    await fetch(url, options);
 }
 
 async function callFetchWithPut(id, novoTime){
@@ -51,10 +52,10 @@ async function callFetchWithPut(id, novoTime){
             'times' : novoTime
         })
     }
-        await fetch('${url}${id}', options);
+        await fetch(`${url}${id}`, options);
 }
 
-async function callFetchWithDelete(){
+async function callFetchWithDelete(id){
     const options = {
         method : 'DELETE',
         mode : 'cors',
@@ -63,7 +64,7 @@ async function callFetchWithDelete(){
             'content-type' : 'application/json'
         }
     }
-    await fetch('${url}${id}', options);
+    await fetch(`${url}${id}`, options);
 }
 
 
