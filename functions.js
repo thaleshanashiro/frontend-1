@@ -30,13 +30,6 @@ async function callFetchWithPost(times){
             'times' : times
         })
     }
-    const response = await fetch(url, options); 
-    if (response.status >= 200 && response.status <= 300){
-        console.log("Funcionou");
-        output.innerHTML = await response.text();
-    } else {
-        console.log("Deu errado");
-    }
     await fetch(url, options);
 }
 
@@ -73,17 +66,17 @@ async function callFetchWithDelete(id){
 function submitPost(){
     console.log("entrei na função");
     const form = document.forms['postForm'];
-    const times = form["time"].value;
-    console.log(times);
-    callFetchWithPost(times);
+    const time = form["time"].value;
+    console.log(time);
+    callFetchWithPost(time);
     return false;
 }
 
 function submitPut(){
     const form = document.forms['putForm'];
     const id = form["id"].value;
-    const times = form["times"].value;
-    callFetchWithPut(id, times);
+    const time = form["time"].value;
+    callFetchWithPut(id, time);
     return false;
 }
 
