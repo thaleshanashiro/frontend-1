@@ -18,7 +18,7 @@ async function callFetchWithGet(){
     }
 }
 
-async function callFetchWithPost(times){
+async function callFetchWithPost(time){
     const options = {
         method : 'POST',
         mode : 'cors',
@@ -42,7 +42,7 @@ async function callFetchWithPut(id, novoTime){
             'content-type' : 'application/json'
         },
         body :JSON.stringify({
-            'times' : novoTime
+            'time' : novoTime
         })
     }
         await fetch(`${url}${id}`, options);
