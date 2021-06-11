@@ -1,7 +1,7 @@
-let url = "https://tt905-224723.herokuapp.com/times/"
+let url = "https://tt906-thales.herokuapp.com/times/"
 
 async function callFetchWithGet(){
-    let header = new Headers();
+    let headers = new Headers();
     const options = {
         method : 'GET',
         mode : 'cors',
@@ -27,7 +27,7 @@ async function callFetchWithPost(times){
             'content-type' : 'application/json'
         },
         body :JSON.stringify({
-            'times' : times
+            'time' : time
         })
     }
     const response = await fetch(url, options); 
@@ -48,7 +48,7 @@ async function callFetchWithPut(id, novoTime){
             'content-type' : 'application/json'
         },
         body :JSON.stringify({
-            'times' : times
+            'time' : novoTime
         })
     }
         await fetch('${url}${id}', options);
@@ -72,22 +72,22 @@ async function callFetchWithDelete(){
 function submitPost(){
     console.log("entrei na função");
     const form = document.forms['postForm'];
-    const times = form["times"].value;
-    console.log(times);
-    callFetchWithPost(times);
+    const time = form["time"].value;
+    console.log(time);
+    callFetchWithPost(time);
     return false;
 }
 
 function submitPut(){
     const form = document.forms['putForm'];
     const id = form["id"].value;
-    const times = form["times"].value;
-    callFetchWithPut(id, times);
+    const time = form["time"].value;
+    callFetchWithPut(id, time);
     return false;
 }
 
 function submitDelete(){
-    const form = document.forms['putForm'];
+    const form = document.forms['deleteForm'];
     const id = form["id"].value;
     callFetchWithDelete(id);
     return false;
