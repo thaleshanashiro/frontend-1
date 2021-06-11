@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Atividade 8
+        </title>
+        <meta charset="UTF-8"/>
+        <script src="js/functions.js">
+        </script>
+    </head>
+    <body>
+        <p id="json"></p>
+        <h2>Adicione um time (post) </h2>
+        <form id="postForm">
+            <label for="times"> Time: </label>
+            <input type="text" id="times" name="times"/>
+            <button type="submit" onclick="return submitPost()">Adicionar</button>
+        </form>
+
+        <h2>Substitua um time (put) </h2>
+        <form id="putForm">
+            <label>id:<input type="text" name="id"/></label>
+            <label>Time: <input type="text" name="times"/></label>
+            <button type="submit" onclick="return submitPut()">Adicionar</button>
+        </form>
+
+        <h2>Delete um time (delete) </h2>
+        <form id="deleteForm">
+            <label>id:<input type="text" name="id"/></label>
+            <button type="submit" onclick="return submitDelete()">Deletar</button>
+        </form>
+
+    </body>
+</html> 
